@@ -1,6 +1,4 @@
 
-//Init the app
-build.init();
 
 //The build object
 var build = {
@@ -41,6 +39,8 @@ var build = {
 };
 
 
+//Init the app
+build.init();
 
 /*
   var newFile = '';
