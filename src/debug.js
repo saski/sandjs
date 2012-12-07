@@ -1,0 +1,3 @@
+var debug = {
+	stat : "Debug"
+}

@@ -1,0 +1,12 @@
+{
+  "version"  : "0.1",
+  "name"     : "Sand JS",
+  "filename" : "sandjs-VER.js",
+  "path"     : "/var/www/sandjs/src/",
+  "files"    : {
+    "intro"    : "intro.js", 
+    "debug"    : "debug.js", 
+    "ajax"     : "ajax.js", 
+    "outro"    : "outro.js"
+  }
+}
