@@ -4,15 +4,19 @@
 var build = {
 
 
-  configFile : '',
+  configFile    : '',
+  configData    : {},
+  encoding      : 'utf8',
+  writableData  : '',
   
   //initialize the builder
   init : function(){
     
     build.checkParams();
     
-    build.readConfigFile();
+    build.configData = build.readConfigFile();
 
+    build.writeableData = build.readFiles();
 
   },
 
@@ -30,11 +34,22 @@ var build = {
   readConfigFile : function(){
     var fs = require('fs');
 
-    var file = fs.readFileSync(build.configFile, 'utf8');
+    console.log('Reading config file: ' + build.configFile);
+    var file = fs.readFileSync(build.configFile, build.encoding);
 
-    console.log('Reading OK: ' + build.configFile);
     configData = JSON.parse(file);
-    console.log(configData);
+    return configData;
+  },
+
+  readFiles : function(){
+    var fs = require('fs');
+    var writableData = '';
+
+    for (var filename in build.configData.files){
+      console.log('Reading: ' + build.configData.path + build.configData.files[filename]);
+      writableData += fs.readFileSync(build.configData.path + build.configData.files[filename], build.encoding) + '\n';
+    }
+    return writableData;
   }
 };
 

@@ -7,6 +7,6 @@
     "intro"    : "intro.js", 
     "debug"    : "debug.js", 
     "ajax"     : "ajax.js", 
-    "outro"    : "outro.js"
+    "outro"    : "outro.js" 
   }
 }
