@@ -18,6 +18,7 @@ var build = {
 
     build.writeableData = build.readFiles();
 
+    build.buildFile();
   },
 
   checkParams : function(){
@@ -50,36 +51,21 @@ var build = {
       writableData += fs.readFileSync(build.configData.path + build.configData.files[filename], build.encoding) + '\n';
     }
     return writableData;
+  },
+
+  buildFile : function(){
+    var fs = require('fs'),
+        data = build.writeableData,
+        filename = build.configData.path + build.configData.filename,
+        encoding = build.encoding;
+
+    console.log("Writting data in: " + build.configData.path + build.configData.filename);
+    //console.log("writeableData 2: " + build.writeableData);
+
+    fs.writeFileSync(filename, data, encoding);
   }
 };
 
 
 //Init the app
 build.init();
-
-/*
-  var newFile = '';
-  for(var file in datap.files){
-    fs.readFileSync(datap.path + datap.files[file], 'utf8', function(err, data2) {
-      if (err) throw err;
-      console.log("Leyendo: " + datap.path + datap.files[file]);
-      console.log(datap.path + datap.files[file] + " tiene: " + data2);
-      newFile += data2;
-      if(file == 'outro'){
-        createFile(datap.path + datap.filename, newFile);
-      }
-    }); 
-  }
-
-function createFile(file, data){
-
-  console.log("Readed: " + data);
-  fs.unlink(file, function (err) {
-    if (err) throw err;
-    console.log('Successfully deleted ' + file);
-  });
-  fs.writeFile(file, data, function (err) {
-    if (err) throw err;
-    console.log("Escribiendo en: " + file);
-  });
-}*/
