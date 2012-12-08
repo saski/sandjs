@@ -1,3 +1,3 @@
 var ajax = {
-	status = "Ajax"
+	status : "Ajax"
 }

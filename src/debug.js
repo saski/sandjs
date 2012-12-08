@@ -1,3 +1,4 @@
 var debug = {
-	stat : "Debug"
+	status : "Debug",
+	version : "1.2"
 }
