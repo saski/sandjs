@@ -2,7 +2,7 @@
   "version"  : "0.1",
   "name"     : "Sand JS",
   "filename" : "sandjs-VER.js",
-  "path"     : "/var/www/sandjs/src/",
+  "path"     : "./src/",
   "files"    : {
     "intro"    : "intro.js", 
     "debug"    : "debug.js", 
